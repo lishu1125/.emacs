@@ -1,0 +1,243 @@
+* *常用快捷键*
+| C-x C-c          | 保存并退出                   |
+| C-x C-f          | 打开文件                     |
+| C-x C-s          | 保存文件                     |
+| C-x s            | 保存所有未保存的缓冲区       |
+| C-x C-w          | 另存为文件                   |
+| C-x u            | 取消上一次操作               |
+| C-x C-r          | 以只读模式打开               |
+| C-x i            | 插入文件                     |
+| C-x d            | 进入目录列表模式             |
+| C-x C-d          | 获取文件列表（简洁）         |
+| M-g M-g          | 跳转到某行                   |
+| C+u + num + cmd  | 重复执行cmd num次            |
+| C+g              | 取消当前命令或输入一半的命令 |
+| M+w              | 复制                         |
+| C-w              | 剪切                         |
+| C-y              | 粘贴                         |
+| M-x recover-file | 恢复因系统崩溃而丢失的文件   |
+
+* *org-mode操作*
+| C-c C-e a | 导出为文本文件   |
+| C-c C-e h | 导出为 HTML 文件 |
+
+- *TODOLIST*
+Org mode 的一个很重要的功能就是写 todo list。 创建一个todo list 和创建一个 org mode 的其他标题并没有什么区别。
+
+比如你可以顶格写下这样一行：
+
+*write org mode document
+
+然后把光标移动到这行上，按shift+左右方向键，你会发现该条目会在 TODO和 DONE 之间切换：
+
+*TODO write org mode document
+
+*DONE write org mode document
+
+这就是最简单的 todo list 了，想做什么，就在 org mode 下创建一个条目，并将其状态设置为 TODO，做完后将其状态设置为 DONE。
+
+todo list 默认只有两种状态： TODO 和 DONE。我们可以再增加一些其他状态。
+
+比如在.emacs中加入下面的语句:
+
+(setq org-todo-keywords
+
+      '((sequence "TODO" "DOING" "HANGUP" "|" "DONE" "CANCEL")))
+
+可以将 todo list 的状态增加为五种：TODO，DOING，HANGUP，DONE，CANCEL。
+
+注意，在 HANGUP 和 DONE 之间有一条竖线 “|”，在竖线之前的状态和之后的状态使用的是不同的face。
+
+进一步的，我们还可以记录切换到某一种状态时的时间：
+
+(setq org-todo-keywords
+
+      '((sequence "TODO(t)" "DOING(i!)" "HANGUP(h!)" "|" "DONE(d!)" "CANCEL(c!)")))
+
+在 DOING HANGUP DONE 和 CANCEL 后的括号中都有一个’!'，这种写法表示进入到这些状态后会记录下当前时间。
+
+而每个状态后面的括号中都有一个字母，这个字母就是进入该状态的快捷键。当你想切换到某一状态时，可以输入’C-c C-t’（此时 emacs 会弹出一个提示窗口），然后输入对应的快捷键就可以把当前的条目设置为该状态。
+
+注意，改变 org-todo-keywrods 之后，最好把你的 org mode 的文件关闭，然后在重新打开，否则可能会发现设置无效。
+
+让扩展名为.org的文件打开后默认进入 org mode，只需在.emacs 中加入：(emacs 23已默认可以，不需要加)
+
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+
+* *光标操作*
+| C+p   | 光标上移                           |
+| C+n   | 光标下移                           |
+| C+b   | 光标后移                           |
+| M+b   | 光标向前移动一个单词               |
+| C+f   | 光标前移                           |
+| M+f   | 光标向后移动一个单词               |
+| C+v   | 向下翻页                           |
+| M+v   | 向上翻页                           |
+| C-x < | 水平滚动屏幕                       |
+| C-x > | 水平滚动屏幕                       |
+| C+l   | 光标移动屏幕中间                   |
+| C+a   | 光标移动到本行最前位置             |
+| C+e   | 光标移动到本行最后位置             |
+| M+a   | 光标移动到本句或上一句的最前位置   |
+| M+e   | 光标移动到本句或或下一句的最后位置 |
+| M+<   | 移动到当前文档开始处               |
+| M+>   | 移动到当前文档结束处               | 
+
+* *标记操作*
+| C-@     | 设置标记                   |
+| C-x C-x | 在当前光标位置和标记处跳转 |
+| M-@     | 设置单词标记               |
+| M-h     | 标记段                     |
+| C-x C-p | 标记页                     |
+| C-M-@   | 标记表达式                 |
+| C-M-h   | 标记函数                   |
+| C-x h   | 标记整个缓冲区             |
+
+* *BUFFERS操作*
+在emacs里面编辑的每一个文档都是一个buffer，可以通过C+x+C+f+‘文件名’进行切换
+
+如当前emacs里编辑着两个文件，即两个buffer，‘foo’和‘test.cc’。
+
+也可以通过按C+x+b+文档名来进行切换。
+
+假设你忘记了文件的名字，那你可以先输入：
+| C+x+C+b    | 查看当前emacs打开的文档列表，可以用C+x+1来关闭打开的列表窗口。                                                                                                                                                                                                                                           |
+|            | 其中里面有两项并不指向任何文档，*Buffer List*和*Messages*，这两项分别保存列表文档的名称，及保存emacs最低下显示的信息，你可以通过C+x+b然后输入这两个名字来查看他们的内容。                                                                                                                                |
+|            | 如果现在emacs打开了三个文档，你编辑完第一个后没保存，直接切换到第二个，同样是没保存直接切换到第三个，这时如果你想要保存前两个文档，除了分别切换到那两个文档然后再执行保存的方法外，还有更简单的方法是在第三个文档的界面下直接按C+x+s，这时底下的信息栏会一一问你是否要进行对第一个和第二个文档进行保存。 |
+| C-x k      | 关闭缓冲区                                                                                                                                                                                                                                                                                               |
+| C-x ->(<-) | 按下C-x后（放开）再按向右（左）方向键可以定位到下（上）一个buffer中                                                                                                                                                                                                                                      |
+
+* *多窗格操作*
+| C+x+2            | 将当前窗口横向一分为二           |
+| C+x+3            | 将当前窗口纵向一分为二           |
+| C+x+o            | 将光标移动到另一窗口             |
+| C+x+1            | 去除其他窗口，剩下光标所在的窗口 |
+| C-x 0            | 关闭当前窗格                     |
+| C+M+v            | 光标在一个窗口，使另一个窗口滚动 |
+| C+x+4+C+f+文件名 | 打开一个文件，在一个新窗口里显示 |
+| C-x 4            | b 在其他窗格切换缓冲区           |
+| C-x 4            | C-o 在其他窗格显示缓冲区         |
+| C-x ^            | 窗格高度增加                     |
+| C-x {            | 窗格宽度减少                     |
+| C-x }            | 窗格宽度增加                     |
+
+* *Cscope配置*
+要在 Emacs 里面 使用，首先必须把 xcscope.el 拷贝到 load-path 里面包含的目录里面。并在 ~/.emacs 里面加上 (require 'xcscope) 就可以了，
+
+或者，如果你希望在打开 c 或者 c++ 文件的时候才加载 xcsope ，可以写：
+
+(add-hook 'c-mode-common-hook
+
+	  '(lambda ()
+
+	    (require 'xcscope)))
+
+默认是的快捷键都是绑定到 C-c s 的前缀上面，如果嫌麻烦的话可以自己更改 快捷键绑定。
+- 这是默认的用于查找的键绑定：
+| C-c s s | Find symbol.                                 |
+| C-c s d | Find global definition.                      |
+| C-c s g | Find global definition (alternate binding).  |
+| C-c s G | Find global definition without prompting.    |
+| C-c s c | Find functions calling a function.           |
+| C-c s C | Find called functions (list functions called |
+|         | from a function).                            |
+| C-c s t | Find text string.                            |
+| C-c s e | Find egrep pattern.                          |
+| C-c s f | Find a file.                                 |
+| C-c s i | Find files #including a file.                |
+- 下面是在搜索到的结果之间切换用的快捷键：
+| C-c s b | Display *cscope* buffer.             |
+| C-c s B | Auto display *cscope* buffer toggle. |
+| C-c s n | Next symbol.                         |
+| C-c s N | Next file.                           |
+| C-c s p | Previous symbol.                     |
+| C-c s P | Previous file.                       |
+| C-c s u | Pop mark.                            |
+更详细的使用说明请参见 xcscope.el 文件头部的注释。
+- cscope-indexer使用：
+cscope-indexer -r（装cygwin，使用bash到目录下生成cscope.files和cscope.out）
+- 打开cscope时不更新，提高索引速度 
+(setq cscope-do-not-update-database t)
+
+* *windmove配置*
+Emacs自带这个包，只要在你的.emacs中加入:
+
+(windmove-default-keybindings)
+
+然后就可以用S-<up>、S-<right>跳转到上面、右边的窗口了。
+
+如果你用shift-selection-mode或者cua-mode，那么不想用Shift来做窗口跳转的话，将上面的配置改为:
+
+(windmove-default-keybindings 'meta)
+
+或者
+
+(windmove-default-keybindings 'super)
+
+* *windresize配置*
+M-x windresize 进入调整窗口大小的交互模式
+
+用上下左右键调整大小，用 i 调整步长，o键或者M-S-<up>/<left>跳到其它窗口，? 显示帮助，调整完了按RET退出即可。
+
+* *winner-mode配置*
+
+(winner-mode 1)
+
+(global-set-key (kbd "C-x 4 u") 'winner-undo)
+
+(global-set-key (kbd "C-x 4 r") 'winner-redo)
+
+* *zenburn-emacs配置*
+- zenburn-theme.el放在site-lisp
+(require 'zenburn-theme)
+
+(load-theme 'zenburn t)
+
+* *highlight-symbol配置*
+(require 'highlight-symbol)
+
+(global-set-key [(shift f8)] 'highlight-symbol-at-point)
+
+(global-set-key [f3] 'highlight-symbol-next)
+
+(global-set-key [(shift f3)] 'highlight-symbol-prev)
+
+(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
+
+* *auto-complete配置*
+;;auto-complete
+
+(add-to-list 'load-path "~/.emacs.d/pos-tip")
+
+(add-to-list 'load-path "~/.emacs.d/fuzzy-el")
+
+(add-to-list 'load-path "~/.emacs.d/popup-el")
+
+(add-to-list 'load-path "~/.emacs.d/auto-complete")
+
+(require 'auto-complete-config)
+
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
+
+(ac-config-default)
+
+(require 'pos-tip)
+
+(setq ac-quick-help-prefer-pos-tip t)
+
+(setq ac-dwim t)
+
+(setq ac-trigger-commands
+
+      (cons 'backward-delete-char-untabify ac-trigger-commands))
+
+;;(setq ac-fuzzy-enable t)
+
+* *安装插件*
+Emacs和Vim都有大量的插件，一些经久不衰、广泛使用的插件组合起来，就体现出一种"集体智慧"。
+
+Emacs的插件一般都是一个以el为后缀名的文件。首先要指定一个插件目录，比如~/.emacs.d/lisps然后在~/.emacs中指定插件目录和要使用的插件:
+
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+(require 'pluginname)
