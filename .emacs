@@ -287,10 +287,10 @@
 ;;(setq projectile-enable-caching t)
 
 ;;helm配置
-(add-to-list 'load-path "~/.emacs.d/helm")
-(require 'helm-config)
-(global-set-key (kbd "C-c h") 'helm-mini)
-(helm-mode 1)
+;;(add-to-list 'load-path "~/.emacs.d/helm")
+;;(require 'helm-config)
+;;(global-set-key (kbd "C-c h") 'helm-mini)
+;;(helm-mode 1)
 
 ;;个人信息
 (setq user-full-name "lishu")
