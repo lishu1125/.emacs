@@ -330,6 +330,18 @@
 (add-to-list 'load-path "~/.emacs.d/git-emacs/")
 (require 'git-emacs)
 
+;;smart-mode-line配置
+;;(add-to-list 'load-path "~/.emacs.d/dash")
+;;(require 'dash-functional)
+;;(require 'dash)
+;;(add-to-list 'load-path "~/.emacs.d/smart-mode-line")
+;;(require 'smart-mode-line)
+;;(sml/setup)
+;;(sml/apply-theme 'dark)
+;;(sml/apply-theme 'light)
+;;(sml/apply-theme 'respectful)
+;;(sml/apply-theme 'automatic)
+
 ;;个人信息
 (setq user-full-name "lishu")
 (setq user-mail-address "lishu1125@126.com")
