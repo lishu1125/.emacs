@@ -51,20 +51,22 @@
 (setq default-major-mode 'text-mode)
 
 ;;括号匹配时显示另外一边的括号，而不是烦人的跳到另一个括号
-(show-paren-mode t)
-(setq show-paren-style 'parentheses)
+;;(show-paren-mode t)
+;;(setq show-paren-style 'parentheses)
+(require 'highlight-parentheses)
+(highlight-parentheses-mode 1)
 
 ;;光标靠近鼠标指针时，让鼠标指针自动让开，别挡住视线
 (mouse-avoidance-mode 'animate)
 
-;;在标题栏显示buffer的名字，而不是 emacs@wangyin.com 这样没用的提示
+;;在标题栏显示buffer的名字
 (setq frame-title-format "emacs@%b")
 
 ;;在窗口的标题栏上显示文件名称
 (setq frame-title-format "%n%F/%b")
 
 ;;让 Emacs 可以直接打开和显示图片
-(auto-image-file-mode)
+(auto-image-file-mode t)
 
 ;;进行语法加亮
 (global-font-lock-mode t)
@@ -165,22 +167,22 @@
 ;; C-c s i             看看指定的文件被哪些文件include
 
 ;;ibuffer配置
-(require 'ibuffer)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+;;(require 'ibuffer)
+;;(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;sr-speedbar配置
-(require 'sr-speedbar)  
-(setq speedbar-show-unknown-files t)  
-(setq speedbar-use-images nil)  
-(setq sr-speedbar-width 30)  
-(setq sr-speedbar-right-side nil)  
-(global-set-key (kbd "<f5>") (lambda()  
-                               (interactive)  
-                               (sr-speedbar-toggle))) 
+;;(require 'sr-speedbar)  
+;;(setq speedbar-show-unknown-files t)  
+;;(setq speedbar-use-images nil)  
+;;(setq sr-speedbar-width 30)  
+;;(setq sr-speedbar-right-side nil)  
+;;(global-set-key (kbd "<f5>") (lambda()  
+;;                               (interactive)  
+;;                               (sr-speedbar-toggle))) 
 
 ;;窗口管理	
 ;;windmove
-(windmove-default-keybindings)
+;;(windmove-default-keybindings)
 ;;(windmove-default-keybindings 'meta)
 
 ;;window-numbering
@@ -341,6 +343,29 @@
 ;;(sml/apply-theme 'light)
 ;;(sml/apply-theme 'respectful)
 ;;(sml/apply-theme 'automatic)
+
+;;twittering-mode配置
+;;(add-to-list 'load-path "~/.emacs.d/twittering-mode")
+;;(require 'twittering-mode)
+;;(setq twittering-use-master-password t)
+;;(setq twittering-allow-insecure-server-cert t)
+;;(setq twittering-oauth-use-ssl nil)
+;;(setq twittering-use-ssl nil)
+;;(twittering-enable-unread-status-notifier)
+;;(setq-default twittering-icon-mode t)
+;;(setq twittering-initial-timeline-spec-string `(“:home@sina”
+;;; “:home@douban”
+;;))
+
+;;powerline配置
+(require 'powerline)
+(require 'cl)
+;;(setq powerline-arrow-shape 'arrow)   ;; the default
+;;(setq powerline-arrow-shape 'curve)   ;; give your mode-line curves
+;;(setq powerline-arrow-shape 'arrow14) ;; best for small fonts
+(custom-set-faces
+ '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
+ '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
 
 ;;个人信息
 (setq user-full-name "lishu")
