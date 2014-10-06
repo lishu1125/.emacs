@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -181,15 +182,15 @@
 ;;                               (sr-speedbar-toggle))) 
 
 ;;窗口管理	
-;;windmove
+;;windmove配置
 ;;(windmove-default-keybindings)
 ;;(windmove-default-keybindings 'meta)
 
-;;window-numbering
+;;window-numbering配置
 (require 'window-numbering)
 (window-numbering-mode 1)
 
-;;windresize
+;;windresize配置
 (require 'windresize)
 
 ;;undo/redo之前的窗口操作
@@ -236,20 +237,24 @@
 (setq ac-trigger-commands
       (cons 'backward-delete-char-untabify ac-trigger-commands))
 ;;(setq ac-fuzzy-enable t)
+;;设置背景颜色
+(set-face-background 'ac-candidate-face "lightgray")
+(set-face-underline 'ac-candidate-face "darkgray")
+(set-face-background 'ac-selection-face "steelblue") 
 
 ;;w3m配置
 ;;指定w3m可执行程序，所在的执行路径
-(add-to-list 'exec-path "~/.emacs.d/w3m")
-(add-to-list 'load-path "~/.emacs.d/w3m-lisp")
-(require 'w3m-load)
-(setq w3m-use-favicon nil)
-(setq w3m-command-arguments '("-cookie" "-F"))
-(setq w3m-use-cookies t)
+;;(add-to-list 'exec-path "~/.emacs.d/w3m")
+;;(add-to-list 'load-path "~/.emacs.d/w3m-lisp")
+;;(require 'w3m-load)
+;;(setq w3m-use-favicon nil)
+;;(setq w3m-command-arguments '("-cookie" "-F"))
+;;(setq w3m-use-cookies t)
 ;;(setq w3m-default-display-inline-images t)
 ;;(setq w3m-default-toggle-inline-images t)
 ;;(setq w3m-show-graphic-icons-in-header-line t)                  
 ;;(setq w3m-show-graphic-icons-in-mode-line t)
-(setq w3m-home-page "http://www.baidu.com/")
+;;(setq w3m-home-page "http://www.baidu.com/")
 
 ;; 按下shift拖拽鼠标即可选择矩形区域
 ;; Support for marking a rectangle of text with highlighting.
@@ -364,8 +369,12 @@
 ;;(setq powerline-arrow-shape 'curve)   ;; give your mode-line curves
 ;;(setq powerline-arrow-shape 'arrow14) ;; best for small fonts
 (custom-set-faces
- '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
+ '(mode-line ((t (:foreground "#030303" :background "OliveDrab3" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
+
+;;python-mode配置
+(add-to-list 'load-path "~/.emacs.d/python-mode.el-6.1.3")
+(require 'python-mode)
 
 ;;个人信息
 (setq user-full-name "lishu")
