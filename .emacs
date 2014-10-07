@@ -212,9 +212,9 @@
 
 ;;org-mode≈‰÷√
 (setq org-todo-keywords
-      '((sequence "TODO" "DOING" "HANGUP" "|" "DONE" "CANCEL")))
+      '((sequence "TODO" "DOING" "|" "DONE" "CANCEL")))
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "DOING(i!)" "HANGUP(h!)" "|" "DONE(d!)" "CANCEL(c!)")))
+      '((sequence "TODO(t)" "DOING(i!)" "|" "DONE(d!)" "CANCEL(c!)")))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
 ;;CC-Mode≈‰÷√
@@ -376,6 +376,29 @@
 (add-to-list 'load-path "~/.emacs.d/python-mode.el-6.1.3")
 (require 'python-mode)
 
+;;unicad≈‰÷√
+(require 'unicad)
+
+;;hs-minor-mode≈‰÷√
+(setq hs-allow-nesting t)
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (hs-minor-mode 1)
+            ))
+(add-hook 'emacs-lisp-mode-hook
+          (lambda()
+            (hs-minor-mode 1)))
+(add-hook 'tcl-mode-hook (lambda ()
+                           (hs-minor-mode 1)
+                           ))
+(add-to-list 'hs-special-modes-alist
+             '(c-mode "[\n\t ]*{" "}" "/[*/]" nil hs-c-like-adjust-block-beginning))
+(add-to-list 'hs-special-modes-alist
+             '(c++-mode "[\n\t ]*{" "}" "/[*/]" nil hs-c-like-adjust-block-beginning))						   
+(define-key global-map (kbd "M-,") 'hs-toggle-hiding)
+;;hs-hide-all
+;;hs-show-all
+			 
 ;;∏ˆ»À–≈œ¢
 (setq user-full-name "lishu")
 (setq user-mail-address "lishu1125@126.com")
