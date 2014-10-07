@@ -147,6 +147,10 @@
     kept-old-versions 2 ; 保留最早的2个备份文件
     version-control t) ; 多次备份
 
+;;括号自动补全
+(require 'electric)
+(electric-pair-mode t)
+
 ;;高亮显示当前行
 (require 'highlight-current-line)
 (highlight-current-line-on t)
