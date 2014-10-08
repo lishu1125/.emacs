@@ -3,6 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
@@ -150,6 +151,9 @@
 ;;括号自动补全
 (require 'electric)
 (electric-pair-mode t)
+
+;;不让光标闪烁
+(blink-cursor-mode 0)
 
 ;;高亮显示当前行
 (require 'highlight-current-line)
@@ -341,31 +345,6 @@
 (add-to-list 'load-path "~/.emacs.d/git-emacs/")
 (require 'git-emacs)
 
-;;smart-mode-line配置
-;;(add-to-list 'load-path "~/.emacs.d/dash")
-;;(require 'dash-functional)
-;;(require 'dash)
-;;(add-to-list 'load-path "~/.emacs.d/smart-mode-line")
-;;(require 'smart-mode-line)
-;;(sml/setup)
-;;(sml/apply-theme 'dark)
-;;(sml/apply-theme 'light)
-;;(sml/apply-theme 'respectful)
-;;(sml/apply-theme 'automatic)
-
-;;twittering-mode配置
-;;(add-to-list 'load-path "~/.emacs.d/twittering-mode")
-;;(require 'twittering-mode)
-;;(setq twittering-use-master-password t)
-;;(setq twittering-allow-insecure-server-cert t)
-;;(setq twittering-oauth-use-ssl nil)
-;;(setq twittering-use-ssl nil)
-;;(twittering-enable-unread-status-notifier)
-;;(setq-default twittering-icon-mode t)
-;;(setq twittering-initial-timeline-spec-string `(“:home@sina”
-;;; “:home@douban”
-;;))
-
 ;;powerline配置
 (require 'powerline)
 (require 'cl)
@@ -402,7 +381,23 @@
 (define-key global-map (kbd "M-,") 'hs-toggle-hiding)
 ;;hs-hide-all
 ;;hs-show-all
-			 
+
+;;注释配置
+(defun qiang-comment-dwim-line (&optional arg)
+  "Replacement for the comment-dwim command.
+If no region is selected and current line is not blank and
+we are not at the end of the line, then comment current line.
+Replaces default behaviour of comment-dwim,
+when it inserts comment at the end of the line. "
+
+  (interactive "*P")
+  (comment-normalize-vars)
+
+  (if (and (not (region-active-p)) (not (looking-at "[ \t]*$")))
+      (comment-or-uncomment-region (line-beginning-position) (line-end-position))
+    (comment-dwim arg)))
+(global-set-key "\M-;" 'qiang-comment-dwim-line)
+	
 ;;个人信息
 (setq user-full-name "lishu")
 (setq user-mail-address "lishu1125@126.com")
