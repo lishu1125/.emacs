@@ -59,7 +59,7 @@
 (highlight-parentheses-mode 1)
 
 ;;光标靠近鼠标指针时，让鼠标指针自动让开，别挡住视线
-(mouse-avoidance-mode 'animate)
+;;(mouse-avoidance-mode 'animate)
 
 ;;在标题栏显示buffer的名字
 (setq frame-title-format "emacs@%b")
@@ -159,7 +159,8 @@
 (require 'highlight-current-line)
 (highlight-current-line-on t)
 ;;(global-hl-line-mode 1)
-(set-face-background 'highlight-current-line-face "#666666")
+;;(set-face-background 'highlight-current-line-face "#666666")
+(set-face-background 'highlight-current-line-face "#7A378B")
 
 ;;Cscope配置
 (require 'xcscope)
