@@ -119,6 +119,9 @@
 ;;不让光标闪烁
 (blink-cursor-mode 0)
 
+;; hilight mark area
+(transient-mark-mode t)
+
 ;;个人信息
 (setq user-full-name "lishu")
 (setq user-mail-address "lishu1125@126.com")
