@@ -12,5 +12,9 @@
 (require 'init-ido)
 (require 'init-org-mode)
 (require 'init-w3m)
+(require 'init-helm)
+(require 'init-projectile)
+(require 'init-smex)
+(require 'init-imenu-anywhere)
 
 (provide 'init)
