@@ -1,5 +1,5 @@
-;;w3mÅäÖÃ
-;;Ö¸¶¨w3m¿ÉÖ´ĞĞ³ÌĞò£¬ËùÔÚµÄÖ´ĞĞÂ·¾¶
+ï»¿;;w3mé…ç½®
+;;æŒ‡å®šw3må¯æ‰§è¡Œç¨‹åºï¼Œæ‰€åœ¨çš„æ‰§è¡Œè·¯å¾„
 ;;(add-to-list 'exec-path "~/.emacs.d/w3m")
 ;;(add-to-list 'load-path "~/.emacs.d/w3m-lisp")
 ;;(require 'w3m-load)

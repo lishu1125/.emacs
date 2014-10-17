@@ -1,9 +1,9 @@
-;;projectileÅäÖÃ
+ï»¿;;projectileé…ç½®
 ;;(add-to-list 'load-path "~/.emacs.d/projectile")
 ;;(require 'projectile)
-;; Ä¬ÈÏÈ«¾ÖÊ¹ÓÃ
+;; é»˜è®¤å…¨å±€ä½¿ç”¨
 ;;(projectile-global-mode)
-;; Ä¬ÈÏ´ò¿ª»º´æ
+;; é»˜è®¤æ‰“å¼€ç¼“å­˜
 ;;(setq projectile-enable-caching t)
 
 (provide 'init-projectile)

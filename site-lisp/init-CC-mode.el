@@ -1,4 +1,4 @@
-;;CC-ModeÅäÖÃ
+ï»¿;;CC-Modeé…ç½®
 (require 'cc-mode)
 (c-set-offset 'inline-open 0)
 (c-set-offset 'friend '-)

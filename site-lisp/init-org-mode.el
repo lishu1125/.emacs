@@ -1,4 +1,4 @@
-;;org-mode≈‰÷√
+Ôªø;;org-modeÈÖçÁΩÆ
 (setq org-todo-keywords
       '((sequence "TODO" "DOING" "|" "DONE" "CANCEL")))
 (setq org-todo-keywords

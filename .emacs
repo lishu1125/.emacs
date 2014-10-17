@@ -1,4 +1,4 @@
-(custom-set-variables
+ï»¿(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
@@ -17,7 +17,7 @@
 
 (require 'init)
 
-;;git-emacsÅäÖÃ
+;;git-emacsé…ç½®
 (setq explicit-shell-file-name
       "C:/Program Files (x86)/Git/bin/bash.exe")
 (setq shell-file-name explicit-shell-file-name)
@@ -25,7 +25,7 @@
 (add-to-list 'load-path "~/.emacs.d/git-emacs/")
 (require 'git-emacs)
 
-;;powerlineÅäÖÃ
+;;powerlineé…ç½®
 (require 'powerline)
 (require 'cl)
 ;;(setq powerline-arrow-shape 'arrow)   ;; the default
@@ -35,14 +35,14 @@
  '(mode-line ((t (:foreground "#030303" :background "OliveDrab3" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
 
-;;python-modeÅäÖÃ
+;;python-modeé…ç½®
 (add-to-list 'load-path "~/.emacs.d/python-mode.el-6.1.3")
 (require 'python-mode)
 
-;;unicadÅäÖÃ
+;;unicadé…ç½®
 (require 'unicad)
 
-;;hs-minor-modeÅäÖÃ
+;;hs-minor-modeé…ç½®
 ;;hs-hide-all
 ;;hs-show-all
 (setq hs-allow-nesting t)
@@ -62,7 +62,7 @@
              '(c++-mode "[\n\t ]*{" "}" "/[*/]" nil hs-c-like-adjust-block-beginning))						   
 (define-key global-map (kbd "M-,") 'hs-toggle-hiding)
 
-;;×¢ÊÍÅäÖÃ
+;;æ³¨é‡Šé…ç½®
 (defun qiang-comment-dwim-line (&optional arg)
   "Replacement for the comment-dwim command.
 If no region is selected and current line is not blank and

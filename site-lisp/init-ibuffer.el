@@ -1,4 +1,4 @@
-;;ibufferÅäÖÃ
+ï»¿;;ibufferé…ç½®
 ;;(require 'ibuffer)
 ;;(global-set-key (kbd "C-x C-b") 'ibuffer)
 

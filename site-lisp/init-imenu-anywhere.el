@@ -1,4 +1,4 @@
-;;imenu-anywhereÅäÖÃ
+ï»¿;;imenu-anywhereé…ç½®
 (require 'imenu-anywhere)
 (global-set-key (kbd "C-.") 'imenu-anywhere)
 

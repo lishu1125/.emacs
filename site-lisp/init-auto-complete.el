@@ -1,4 +1,4 @@
-;;auto-completeÅäÖÃ
+ï»¿;;auto-completeé…ç½®
 (add-to-list 'load-path "~/.emacs.d/pos-tip")
 (add-to-list 'load-path "~/.emacs.d/fuzzy-el")
 (add-to-list 'load-path "~/.emacs.d/popup-el")
@@ -12,7 +12,7 @@
 (setq ac-trigger-commands
       (cons 'backward-delete-char-untabify ac-trigger-commands))
 ;;(setq ac-fuzzy-enable t)
-;;ÉèÖÃ±³¾°ÑÕÉ«
+;;è®¾ç½®èƒŒæ™¯é¢œè‰²
 (set-face-background 'ac-candidate-face "lightgray")
 (set-face-underline 'ac-candidate-face "darkgray")
 (set-face-background 'ac-selection-face "steelblue")

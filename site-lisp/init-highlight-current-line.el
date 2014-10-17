@@ -1,4 +1,4 @@
-;;¸ßÁÁÏÔÊ¾µ±Ç°ĞĞ
+ï»¿;;é«˜äº®æ˜¾ç¤ºå½“å‰è¡Œ
 (require 'highlight-current-line)
 (highlight-current-line-on t)
 ;;(set-face-background 'highlight-current-line-face "#666666")

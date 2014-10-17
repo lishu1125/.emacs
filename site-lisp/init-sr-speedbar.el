@@ -1,4 +1,4 @@
-;;sr-speedbarÅäÖÃ
+ï»¿;;sr-speedbaré…ç½®
 ;;(require 'sr-speedbar)  
 ;;(setq speedbar-show-unknown-files t)  
 ;;(setq speedbar-use-images nil)  

@@ -1,4 +1,4 @@
-;;themeÅäÖÃ
+ï»¿;;themeé…ç½®
 (require 'zenburn-theme)
 (load-theme 'zenburn t)
 

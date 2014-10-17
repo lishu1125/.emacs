@@ -1,4 +1,4 @@
-;;highlight-symbolÅäÖÃ
+ï»¿;;highlight-symbolé…ç½®
 (require 'highlight-symbol)
 (global-set-key [(shift f8)] 'highlight-symbol-at-point)
 

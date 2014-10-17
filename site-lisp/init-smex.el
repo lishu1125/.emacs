@@ -1,4 +1,4 @@
-;;smexÅäÖÃ
+ï»¿;;smexé…ç½®
 (add-to-list 'load-path "~/.emacs.d/smex")
 (require 'smex)
 (smex-initialize)

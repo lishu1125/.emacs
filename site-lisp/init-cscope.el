@@ -1,15 +1,15 @@
-;;CscopeÅäÖÃ
-;; C-c s a Éè¶¨³õÊ¼»¯µÄÄ¿Â¼£¬Ò»°ãÊÇÄã´úÂëµÄ¸ùÄ¿Â¼
-;; C-s s I ¶ÔÄ¿Â¼ÖÐµÄÏà¹ØÎÄ¼þ½¨Á¢ÁÐ±í²¢½øÐÐË÷Òý
-;; C-c s s ÐòÕÒ·ûºÅ
-;; C-c s g Ñ°ÕÒÈ«¾ÖµÄ¶¨Òå
-;; C-c s c ¿´¿´Ö¸¶¨º¯Êý±»ÄÄÐ©º¯ÊýËùµ÷ÓÃ
-;; C-c s C ¿´¿´Ö¸¶¨º¯Êýµ÷ÓÃÁËÄÄÐ©º¯Êý
-;; C-c s e Ñ°ÕÒÕýÔò±í´ïÊ½
-;; C-c s f Ñ°ÕÒÎÄ¼þ
-;; C-c s i ¿´¿´Ö¸¶¨µÄÎÄ¼þ±»ÄÄÐ©ÎÄ¼þinclude
+ï»¿;;Cscopeé…ç½®
+;; C-c s a è®¾å®šåˆå§‹åŒ–çš„ç›®å½•ï¼Œä¸€èˆ¬æ˜¯ä½ ä»£ç çš„æ ¹ç›®å½•
+;; C-s s I å¯¹ç›®å½•ä¸­çš„ç›¸å…³æ–‡ä»¶å»ºç«‹åˆ—è¡¨å¹¶è¿›è¡Œç´¢å¼•
+;; C-c s s åºæ‰¾ç¬¦å·
+;; C-c s g å¯»æ‰¾å…¨å±€çš„å®šä¹‰
+;; C-c s c çœ‹çœ‹æŒ‡å®šå‡½æ•°è¢«å“ªäº›å‡½æ•°æ‰€è°ƒç”¨
+;; C-c s C çœ‹çœ‹æŒ‡å®šå‡½æ•°è°ƒç”¨äº†å“ªäº›å‡½æ•°
+;; C-c s e å¯»æ‰¾æ­£åˆ™è¡¨è¾¾å¼
+;; C-c s f å¯»æ‰¾æ–‡ä»¶
+;; C-c s i çœ‹çœ‹æŒ‡å®šçš„æ–‡ä»¶è¢«å“ªäº›æ–‡ä»¶include
 (require 'xcscope)
-;;´ò¿ªcscopeÊ±²»¸üÐÂ£¬Ìá¸ßË÷ÒýËÙ¶È 
+;;æ‰“å¼€cscopeæ—¶ä¸æ›´æ–°ï¼Œæé«˜ç´¢å¼•é€Ÿåº¦ 
 (setq cscope-do-not-update-database t)
 
 (provide 'init-cscope)

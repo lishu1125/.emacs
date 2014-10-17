@@ -1,4 +1,4 @@
-;;À¨ºÅÆ¥ÅäÅäÖÃ
+ï»¿;;æ‹¬å·åŒ¹é…é…ç½®
 (require 'highlight-parentheses)
 (highlight-parentheses-mode 1)
 
